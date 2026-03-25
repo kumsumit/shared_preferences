@@ -1,9 +1,12 @@
-// Copyright 2013 The Flutter Authors. All rights reserved.
+// Copyright 2013 The Flutter Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // ignore_for_file: public_member_api_docs, unused_local_variable, invalid_use_of_visible_for_testing_member
 import 'package:shared_preferences/shared_preferences.dart';
+// #docregion Android_Options1
+import 'package:shared_preferences_android/shared_preferences_android.dart';
+// #enddocregion Android_Options1
 
 Future<void> readmeSnippets() async {
   // #docregion Write
@@ -43,7 +46,7 @@ Future<void> readmeSnippets() async {
 
 Future<void> readmeSnippetsAsync() async {
   // #docregion Async
-  final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
+  final asyncPrefs = SharedPreferencesAsync();
 
   await asyncPrefs.setBool('repeat', true);
   await asyncPrefs.setString('action', 'Start');
@@ -61,8 +64,8 @@ Future<void> readmeSnippetsAsync() async {
 
 Future<void> readmeSnippetsWithCache() async {
   // #docregion WithCache
-  final SharedPreferencesWithCache prefsWithCache =
-      await SharedPreferencesWithCache.create(
+  final SharedPreferencesWithCache
+  prefsWithCache = await SharedPreferencesWithCache.create(
     cacheOptions: const SharedPreferencesWithCacheOptions(
       // When an allowlist is included, any keys that aren't included cannot be used.
       allowList: <String>{'repeat', 'action'},
@@ -88,7 +91,17 @@ Future<void> readmeSnippetsWithCache() async {
 // from examples.
 Future<void> readmeTestSnippets() async {
   // #docregion Tests
-  final Map<String, Object> values = <String, Object>{'counter': 1};
+  final values = <String, Object>{'counter': 1};
   SharedPreferences.setMockInitialValues(values);
   // #enddocregion Tests
 }
+
+// #docregion Android_Options2
+const SharedPreferencesAsyncAndroidOptions options =
+    SharedPreferencesAsyncAndroidOptions(
+      backend: SharedPreferencesAndroidBackendLibrary.SharedPreferences,
+      originalSharedPreferencesOptions: AndroidSharedPreferencesStoreOptions(
+        fileName: 'the_name_of_a_file',
+      ),
+    );
+// #enddocregion Android_Options2

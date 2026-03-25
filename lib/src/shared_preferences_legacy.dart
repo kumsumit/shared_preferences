@@ -1,4 +1,4 @@
-// Copyright 2013 The Flutter Authors. All rights reserved.
+// Copyright 2013 The Flutter Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -7,6 +7,8 @@ import 'dart:async';
 import 'package:flutter/foundation.dart' show visibleForTesting;
 import 'package:shared_preferences_platform_interface/shared_preferences_platform_interface.dart';
 import 'package:shared_preferences_platform_interface/types.dart';
+
+import 'shared_preferences_devtools_extension_data.dart';
 
 /// Wraps NSUserDefaults (on iOS) and SharedPreferences (on Android), providing
 /// a persistent store for simple data.
@@ -28,7 +30,8 @@ class SharedPreferences {
   static SharedPreferencesStorePlatform get _store =>
       SharedPreferencesStorePlatform.instance;
 
-  /// Sets the prefix that is attached to all keys for all shared preferences.
+  /// Sets the prefix that is attached to all keys for all shared preferences
+  /// read or written via this class.
   ///
   /// This changes the inputs when adding data to preferences as well as
   /// setting the filter that determines what data will be returned
@@ -42,6 +45,9 @@ class SharedPreferences {
   /// incompatible with shared_preferences. The optional parameter
   /// [allowList] will cause the plugin to only return preferences that
   /// are both contained in the list AND match the provided prefix.
+  ///
+  /// If [prefix] is changed, and an [allowList] is used, the prefix must be included
+  /// on the keys added to the [allowList].
   ///
   /// No migration of existing preferences is performed by this method.
   /// If you set a different prefix, and have previously stored preferences,
@@ -72,8 +78,7 @@ class SharedPreferences {
   /// performance-sensitive blocks.
   static Future<SharedPreferences> getInstance() async {
     if (_completer == null) {
-      final Completer<SharedPreferences> completer =
-          Completer<SharedPreferences>();
+      final completer = Completer<SharedPreferences>();
       _completer = completer;
       try {
         final Map<String, Object> preferencesMap =
@@ -129,7 +134,7 @@ class SharedPreferences {
   /// Reads a set of string values from persistent storage, throwing an
   /// exception if it's not a string list.
   List<String>? getStringList(String key) {
-    List<dynamic>? list = _preferenceCache[key] as List<dynamic>?;
+    var list = _preferenceCache[key] as List<dynamic>?;
     list = list?.cast<String>();
     // Make a copy of the list so that later mutations won't propagate
     return list?.toList() as List<String>?;
@@ -164,14 +169,14 @@ class SharedPreferences {
 
   /// Removes an entry from persistent storage.
   Future<bool> remove(String key) {
-    final String prefixedKey = '$_prefix$key';
+    final prefixedKey = '$_prefix$key';
     _preferenceCache.remove(key);
     return _store.remove(prefixedKey);
   }
 
   Future<bool> _setValue(String valueType, String key, Object value) {
     ArgumentError.checkNotNull(value, 'value');
-    final String prefixedKey = '$_prefix$key';
+    final prefixedKey = '$_prefix$key';
     if (value is List<String>) {
       // Make a copy of the list so that later mutations won't propagate
       _preferenceCache[key] = value.toList();
@@ -193,10 +198,7 @@ class SharedPreferences {
       try {
         return _store.clearWithParameters(
           ClearParameters(
-            filter: PreferencesFilter(
-              prefix: _prefix,
-              allowList: _allowList,
-            ),
+            filter: PreferencesFilter(prefix: _prefix, allowList: _allowList),
           ),
         );
       } catch (e) {
@@ -226,16 +228,13 @@ Either update the implementation to support setPrefix, or do not call setPrefix.
   }
 
   static Future<Map<String, Object>> _getSharedPreferencesMap() async {
-    final Map<String, Object> fromSystem = <String, Object>{};
+    final fromSystem = <String, Object>{};
     if (_prefixHasBeenChanged) {
       try {
         fromSystem.addAll(
           await _store.getAllWithParameters(
             GetAllParameters(
-              filter: PreferencesFilter(
-                prefix: _prefix,
-                allowList: _allowList,
-              ),
+              filter: PreferencesFilter(prefix: _prefix, allowList: _allowList),
             ),
           ),
         );
@@ -258,7 +257,7 @@ Either update the implementation to support setPrefix, or do not call setPrefix.
       return fromSystem;
     }
     // Strip the prefix from the returned preferences.
-    final Map<String, Object> preferencesMap = <String, Object>{};
+    final preferencesMap = <String, Object>{};
     for (final String key in fromSystem.keys) {
       assert(key.startsWith(_prefix));
       preferencesMap[key.substring(_prefix.length)] = fromSystem[key]!;
@@ -271,9 +270,11 @@ Either update the implementation to support setPrefix, or do not call setPrefix.
   /// If the singleton instance has been initialized already, it is nullified.
   @visibleForTesting
   static void setMockInitialValues(Map<String, Object> values) {
-    final Map<String, Object> newValues =
-        values.map<String, Object>((String key, Object value) {
-      String newKey = key;
+    final Map<String, Object> newValues = values.map<String, Object>((
+      String key,
+      Object value,
+    ) {
+      var newKey = key;
       if (!key.startsWith(_prefix)) {
         newKey = '$_prefix$key';
       }
@@ -284,3 +285,10 @@ Either update the implementation to support setPrefix, or do not call setPrefix.
     _completer = null;
   }
 }
+
+// Include an unused import to ensure this library is included
+// when running `flutter run -d chrome`.
+// Check this discussion for more info: https://github.com/flutter/packages/pull/6749/files/6eb1b4fdce1eba107294770d581713658ff971e9#discussion_r1755375409
+// ignore: unused_element
+final bool _fieldToKeepDevtoolsExtensionReachable =
+    fieldToKeepDevtoolsExtensionLibraryAlive;
