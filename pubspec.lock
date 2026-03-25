@@ -139,26 +139,29 @@ packages:
   path_provider_linux:
     dependency: transitive
     description:
-      name: path_provider_linux
-      sha256: f7a1fe3a634fe7734c8d3f2766ad746ae2a2884abe22e241a8b301bf5cac3279
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "617e43452bb3e556908103eba3e7757a34023b65"
+      url: "https://github.com/kumsumit/path_provider_linux.git"
+    source: git
     version: "2.2.1"
   path_provider_platform_interface:
     dependency: transitive
     description:
-      name: path_provider_platform_interface
-      sha256: "88f5779f72ba699763fa3a3b06aa4bf6de76c8e5de842cf6f29e2e06476c2334"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "0e399288d800499fce3b215d24f32c115830be67"
+      url: "https://github.com/kumsumit/path_provider_platform_interface.git"
+    source: git
     version: "2.1.2"
   path_provider_windows:
     dependency: transitive
     description:
-      name: path_provider_windows
-      sha256: bd6f00dbd873bfb70d0761682da2b3a2c2fccc2b9e84c495821639601d81afe7
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "6d35038e64bceb8d518be20aaf89b7a0d12bd511"
+      url: "https://github.com/kumsumit/path_provider_windows.git"
+    source: git
     version: "2.3.0"
   platform:
     dependency: transitive
@@ -171,58 +174,65 @@ packages:
   plugin_platform_interface:
     dependency: transitive
     description:
-      name: plugin_platform_interface
-      sha256: "4820fbfdb9478b1ebae27888254d445073732dae3d6ea81f0b7e06d5dedc3f02"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: f19d3faf8d449aa73be0c3c71bd7e67fc0fb28bf
+      url: "https://github.com/kumsumit/plugin_platform_interface.git"
+    source: git
     version: "2.1.8"
   shared_preferences_android:
     dependency: "direct main"
     description:
-      name: shared_preferences_android
-      sha256: "8374d6200ab33ac99031a852eba4c8eb2170c4bf20778b3e2c9eccb45384fb41"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "9f75ec76e8eeec54a1325fbb6af76ceeb8028597"
+      url: "https://github.com/kumsumit/shared_preferences_android.git"
+    source: git
     version: "2.4.21"
   shared_preferences_foundation:
     dependency: "direct main"
     description:
-      name: shared_preferences_foundation
-      sha256: "4e7eaffc2b17ba398759f1151415869a34771ba11ebbccd1b0145472a619a64f"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: fa3230792a91ea84a268e7efde1603cbd3eca78d
+      url: "https://github.com/kumsumit/shared_preferences_foundation.git"
+    source: git
     version: "2.5.6"
   shared_preferences_linux:
     dependency: "direct main"
     description:
-      name: shared_preferences_linux
-      sha256: "580abfd40f415611503cae30adf626e6656dfb2f0cee8f465ece7b6defb40f2f"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "3860cc9a95d76019877782e12b924817494f85ab"
+      url: "https://github.com/kumsumit/shared_preferences_linux.git"
+    source: git
     version: "2.4.1"
   shared_preferences_platform_interface:
     dependency: "direct main"
     description:
-      name: shared_preferences_platform_interface
-      sha256: "57cbf196c486bc2cf1f02b85784932c6094376284b3ad5779d1b1c6c6a816b80"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: adb7cbf691d52dd414dbbb85909a7fd71615552a
+      url: "https://github.com/kumsumit/shared_preferences_platform_interface.git"
+    source: git
     version: "2.4.1"
   shared_preferences_web:
     dependency: "direct main"
     description:
-      name: shared_preferences_web
-      sha256: c49bd060261c9a3f0ff445892695d6212ff603ef3115edbb448509d407600019
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "1bd0787fc63b63949b975565cf763d3440b6367f"
+      url: "https://github.com/kumsumit/shared_preferences_web.git"
+    source: git
     version: "2.4.3"
   shared_preferences_windows:
     dependency: "direct main"
     description:
-      name: shared_preferences_windows
-      sha256: "94ef0f72b2d71bc3e700e025db3710911bd51a71cefb65cc609dd0d9a982e3c1"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "8c75ac96c22e649f49f223f22601643328cedd03"
+      url: "https://github.com/kumsumit/shared_preferences_windows.git"
+    source: git
     version: "2.4.1"
   sky_engine:
     dependency: transitive
@@ -301,14 +311,23 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
+  win32:
+    dependency: transitive
+    description:
+      name: win32
+      sha256: d7cb55e04cd34096cd3a79b3330245f54cb96a370a1c27adb3c84b917de8b08e
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.15.0"
   xdg_directories:
     dependency: transitive
     description:
-      name: xdg_directories
-      sha256: "7a3f37b05d989967cdddcbb571f1ea834867ae2faa29725fd085180e0883aa15"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
+      path: "."
+      ref: HEAD
+      resolved-ref: "410932cf9651a439aa3e2c2f21098cc61e6daa8a"
+      url: "https://github.com/kumsumit/xdg_directories.git"
+    source: git
+    version: "1.0.3"
 sdks:
-  dart: ">=3.9.0 <4.0.0"
-  flutter: ">=3.35.0"
+  dart: ">=3.11.0 <4.0.0"
+  flutter: ">=3.41.0"

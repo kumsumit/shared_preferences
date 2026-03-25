@@ -111,21 +111,21 @@
     },
     {
       "name": "path_provider_linux",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/path_provider_linux-617e43452bb3e556908103eba3e7757a34023b65/",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.4"
     },
     {
       "name": "path_provider_platform_interface",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/path_provider_platform_interface-2.1.2",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/path_provider_platform_interface-0e399288d800499fce3b215d24f32c115830be67/",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "path_provider_windows",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/path_provider_windows-6d35038e64bceb8d518be20aaf89b7a0d12bd511/",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.4"
     },
     {
       "name": "platform",
@@ -135,45 +135,45 @@
     },
     {
       "name": "plugin_platform_interface",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/plugin_platform_interface-f19d3faf8d449aa73be0c3c71bd7e67fc0fb28bf/",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.8"
     },
     {
       "name": "shared_preferences_android",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.21",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/shared_preferences_android-9f75ec76e8eeec54a1325fbb6af76ceeb8028597/",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
     {
       "name": "shared_preferences_foundation",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.5.6",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/shared_preferences_foundation-fa3230792a91ea84a268e7efde1603cbd3eca78d/",
       "packageUri": "lib/",
-      "languageVersion": "3.9"
+      "languageVersion": "3.11"
     },
     {
       "name": "shared_preferences_linux",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/shared_preferences_linux-2.4.1",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/shared_preferences_linux-3860cc9a95d76019877782e12b924817494f85ab/",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.11"
     },
     {
       "name": "shared_preferences_platform_interface",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/shared_preferences_platform_interface-2.4.1",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/shared_preferences_platform_interface-adb7cbf691d52dd414dbbb85909a7fd71615552a/",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.11"
     },
     {
       "name": "shared_preferences_web",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/shared_preferences_web-2.4.3",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/shared_preferences_web-1bd0787fc63b63949b975565cf763d3440b6367f/",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.11"
     },
     {
       "name": "shared_preferences_windows",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/shared_preferences_windows-2.4.1",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/shared_preferences_windows-8c75ac96c22e649f49f223f22601643328cedd03/",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.11"
     },
     {
       "name": "sky_engine",
@@ -236,16 +236,22 @@
       "languageVersion": "3.4"
     },
     {
-      "name": "xdg_directories",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/xdg_directories-1.1.0",
+      "name": "win32",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/hosted/pub.dev/win32-5.15.0",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.8"
+    },
+    {
+      "name": "xdg_directories",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/xdg_directories-410932cf9651a439aa3e2c2f21098cc61e6daa8a/",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
     },
     {
       "name": "shared_preferences",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "3.9"
+      "languageVersion": "3.11"
     }
   ],
   "generator": "pub",
