@@ -32,7 +32,7 @@ dependencies:
   shared_preferences_android:
     git: https://github.com/kumsumit/shared_preferences_android.git
   shared_preferences_foundation:
-    git: https://github.com/kusumit/shared_preferences_foundation.git
+    git: https://github.com/kumsumit/shared_preferences_foundation.git
   shared_preferences_linux:
     git: https://github.com/kumsumit/shared_preferences_linux.git
   shared_preferences_platform_interface:
@@ -40,7 +40,7 @@ dependencies:
   shared_preferences_web:
     git: https://github.com/kumsumit/shared_preferences_web.git
   shared_preferences_windows:
-    git: https://github.com/kusumit/shared_preferences_windows.git
+    git: https://github.com/kumsumit/shared_preferences_windows.git
 
 dev_dependencies:
   flutter_test:
